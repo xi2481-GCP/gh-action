@@ -45,7 +45,7 @@ jobs:
         files: "${{ env.TRACK_DIR }}/track-slugs.yml"
 
     - name: Create Matrix Data
-      run: echo "TRACKS=$(yq -o j $TRACK_DIR/track-slugs.yml | jq tostring | sed -e 's/^"//' -e 's/"$//')" >> $GITHUB_ENV
+      run: echo "TRACKS=$(yq -o j $TRACK_DIR/track-dev.yml | jq tostring | sed -e 's/^"//' -e 's/"$//')" >> $GITHUB_ENV
       if: steps.check_slugs.outputs.files_exists == 'true'
 
     - id: set-matrix

@@ -3,6 +3,8 @@ id: yhacddcvakvc
 title: Sandbox virtual machine
 teaser: Use a virtual machine (VM) as a sandbox host
 description: |-
+  # TEST
+
   This template shows you how to use a Virtual Machine (VM). VMs can be used when you need more compute and memory or for running Docker containers.
 
   **This track demonstrates how to:**
@@ -16,4 +18,5 @@ tags:
 owner: instruqt-support
 developers:
 - santosh@instruqt.com
-checksum: "12454714020440037298"
+maintenance: false
+checksum: "1738787233399292304"

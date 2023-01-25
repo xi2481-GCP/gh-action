@@ -1,9 +1,9 @@
-slug: 1-docker-vm-action-santosh-dev
-id: de14vqstixcy
-title: DEV - Sandbox virtual machine
+slug: 1-docker-vm-action-santosh
+id: 
+title: Sandbox virtual machine
 teaser: Use a virtual machine (VM) as a sandbox host
 description: |-
-  # Test-2nd
+  # Test-Finl
   This template shows you how to use a Virtual Machine (VM). VMs can be used when you need more compute and memory or for running Docker containers.
 
   **This track demonstrates how to:**
@@ -13,9 +13,9 @@ description: |-
     - Add simple assets (a Dockerfile) to the sandbox host
 icon: https://cdn.instruqt.com/assets/templates/docker.png
 tags:
-- dev
+- prod
 owner: instruqt-support
 developers:
 - santosh@instruqt.com
-maintenance: true
-checksum: "3326864144203630743"
+maintenance: false
+checksum: "7141748138695616313"

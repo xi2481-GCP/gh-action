@@ -32,8 +32,8 @@ jobs:
       - name: Run track delete
         shell: bash
         run: |
-          docker run -e INSTRUQT_TOKEN=${{ env.INSTRUQT_TOKEN }} --workdir="/track" --mount type=bind
-          instruqt track delete ${{ inputs.slug }}  
+          docker run -e INSTRUQT_TOKEN=${{ env.INSTRUQT_TOKEN }} --workdir="/track" --mount type=bind, target=/track instruqt/cli instruqt track delete ${{ inputs.slug }} 
+          
 
       # - name: Check out repository code
       #   uses: actions/checkout@v3

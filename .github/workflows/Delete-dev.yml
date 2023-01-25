@@ -42,6 +42,7 @@ jobs:
         uses: ./.github/actions/track-pull
         with:
           path: ${{ env.TRACK_DIR }}/Test
+        continue-on-error: true
 
       - name: Delete dev track
         uses: ./.github/actions/track-delete

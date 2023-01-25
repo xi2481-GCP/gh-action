@@ -1,0 +1,49 @@
+##############################################################################
+# Instruqt Github Actions Workflow
+#
+# This workflow will Delete the provided track-slug
+#
+##############################################################################
+name: Delete
+
+env:
+  INSTRUQT_TOKEN: ${{ secrets.INSTRUQT_TOKEN }}
+  TRACK_DIR: instruqt-tracks
+  
+concurrency:
+  group: ${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+on: 
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: Track Slug
+        required: true
+        type: string
+    branches:    
+      - '!main'
+      - '!master'
+
+jobs:
+  DeleteDevTrack:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Check out repository code
+        uses: actions/checkout@v3
+
+      - name: Pull dev tracks
+        uses: ./.github/actions/track-pull
+        with:
+          path: ${{ env.TRACK_DIR }}/Test/${{ inputs.slug }}
+
+      - name: Delete dev track
+        uses: ./.github/actions/track-delete
+        with:
+          path: ${{ env.TRACK_DIR }}/Test/${{ inputs.slug }}
+
+      - name: Commit Changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Deleting dev version

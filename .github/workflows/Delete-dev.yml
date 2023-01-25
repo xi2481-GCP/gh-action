@@ -48,6 +48,7 @@ jobs:
         uses: ./.github/actions/track-delete
         with:
           path: ${{ env.TRACK_DIR }}/Test/${{ inputs.slug }}
+        continue-on-error: true
 
       - name: Commit Changes
         uses: stefanzweifel/git-auto-commit-action@v4

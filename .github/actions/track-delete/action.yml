@@ -11,5 +11,5 @@ runs:
     shell: bash
     run: |
       cd ${{ inputs.path }}
-      docker run -e INSTRUQT_TOKEN=${{ env.INSTRUQT_TOKEN }} target=/track instruqt/cli track delete
+      docker run -e INSTRUQT_TOKEN=${{ env.INSTRUQT_TOKEN }} target=/track instruqt/cli track delete ${{ inputs.slug }}
      # docker run -e INSTRUQT_TOKEN=${{ env.INSTRUQT_TOKEN }} --workdir="/track" --mount type=bind,source="$(pwd)",target=/track instruqt/cli track delete

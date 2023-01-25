@@ -11,4 +11,4 @@ runs:
     shell: bash
     run: |
       cd ${{ inputs.path }}
-      docker run -e INSTRUQT_TOKEN=${{ env.INSTRUQT_TOKEN }} --workdir="/track" --mount type=bind,source="$(pwd)",target=/track instruqt/cli track pull ${{ inputs.slug }} --force
+      docker run -e INSTRUQT_TOKEN=${{ env.INSTRUQT_TOKEN }} --workdir="/track" --mount type=bind,source="$(pwd)",target=/track instruqt/cli track pull --force

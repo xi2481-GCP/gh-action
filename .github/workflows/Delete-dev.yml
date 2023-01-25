@@ -29,25 +29,24 @@ jobs:
   DeleteDevTrack:
     runs-on: ubuntu-latest
     steps:
-
-      - name: Check out repository code
-        uses: actions/checkout@v3
-        
-      - name: New dir create
+      - name: Run track delete
+        shell: bash
         run: |
-          cd ${{ env.TRACK_DIR }}
-          mkdir Test
+          instruqt track delete ${{ inputs.slug }}  
 
-      - name: Pull dev tracks
-        uses: ./.github/actions/track-pull
-        with:
-          path: ${{ env.TRACK_DIR }}/Test
-          
+      # - name: Check out repository code
+      #   uses: actions/checkout@v3
+      
 
-      - name: Delete dev track
-        uses: ./.github/actions/track-delete
-        with:
-          path: ${{ env.TRACK_DIR }}/Test/${{ inputs.slug }}
+      # # - name: Pull dev tracks
+      # #   uses: ./.github/actions/track-pull
+      # #   with:
+      # #     path: ${{ env.TRACK_DIR }}/Test/${{ inputs.slug }}
+
+      # - name: Delete dev track
+      #   uses: ./.github/actions/track-delete
+      #   with:
+      #     path: ${{ env.TRACK_DIR }}/Test/${{ inputs.slug }}
 
       - name: Commit Changes
         uses: stefanzweifel/git-auto-commit-action@v4

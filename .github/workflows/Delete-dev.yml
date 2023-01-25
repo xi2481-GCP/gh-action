@@ -32,6 +32,11 @@ jobs:
 
       - name: Check out repository code
         uses: actions/checkout@v3
+        
+      - name: New dir create
+        run: |
+          cd ${{ env.TRACK_DIR }}
+          mkdir Test
 
       - name: Pull dev tracks
         uses: ./.github/actions/track-pull

@@ -32,6 +32,7 @@ jobs:
       - name: Run track delete
         shell: bash
         run: |
+          docker run -e INSTRUQT_TOKEN=${{ env.INSTRUQT_TOKEN }}
           instruqt track delete ${{ inputs.slug }}  
 
       # - name: Check out repository code

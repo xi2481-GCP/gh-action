@@ -1,6 +1,6 @@
-slug: 1-docker-vm-action-santosh
-id: 
-title: Sandbox virtual machine
+slug: 1-docker-vm-action-santosh-dev
+id: de14vqstixcy
+title: DEV - Sandbox virtual machine
 teaser: Use a virtual machine (VM) as a sandbox host
 description: |-
   # Test-2nd
@@ -13,9 +13,9 @@ description: |-
     - Add simple assets (a Dockerfile) to the sandbox host
 icon: https://cdn.instruqt.com/assets/templates/docker.png
 tags:
-- prod
+- dev
 owner: instruqt-support
 developers:
 - santosh@instruqt.com
-maintenance: false
-checksum: "9542803176196272049"
+maintenance: true
+checksum: "3326864144203630743"
